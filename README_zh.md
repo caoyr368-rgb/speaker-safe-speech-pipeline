@@ -1,4 +1,4 @@
-# 面向说话人安全的语音命令流水线
+# 基于开源语音模型的目标说话人命令识别流水线
 
 这是一个与具体模型实现解耦的参考工程，说明如何把多个开源语音模型组合成“重叠感知、说话人门控、低分保守救援”的完整命令识别流水线。
 
@@ -54,7 +54,7 @@ python examples/mock_demo.py
 python tools/prepublish_check.py
 ```
 
-真实接入时，只需实现 `speaker_safe_pipeline.types` 中的五类小接口，再按照英文 README 的 API 示例组装 `ModelBundle`。
+真实接入时，只需实现 `target_speaker_command.types` 中的五类小接口，再按照英文 README 的 API 示例组装 `ModelBundle`。
 
 ## 门限要求
 

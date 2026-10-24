@@ -1,6 +1,6 @@
-"""Public API for the speaker-safe speech command pipeline."""
+"""Public API for target-speaker command recognition."""
 
-from .pipeline import SpeakerSafePipeline
+from .pipeline import TargetSpeakerCommandPipeline
 from .types import ModelBundle, PipelineConfig, PipelineResult, Sample
 
 __all__ = [
@@ -8,6 +8,6 @@ __all__ = [
     "PipelineConfig",
     "PipelineResult",
     "Sample",
-    "SpeakerSafePipeline",
+    "TargetSpeakerCommandPipeline",
 ]
 

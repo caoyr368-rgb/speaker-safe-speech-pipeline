@@ -5,7 +5,7 @@ from __future__ import annotations
 import tempfile
 from pathlib import Path
 
-from speaker_safe_pipeline import ModelBundle, PipelineConfig, Sample, SpeakerSafePipeline
+from target_speaker_command import ModelBundle, PipelineConfig, Sample, TargetSpeakerCommandPipeline
 
 
 class MockOverlapDetector:
@@ -69,7 +69,7 @@ def main() -> None:
             primary_speaker_verifier=MockSpeakerVerifier(0.30, 0.76),
             secondary_speaker_verifier=MockSpeakerVerifier(0.28, 0.72),
         )
-        pipeline = SpeakerSafePipeline(models, PipelineConfig(
+        pipeline = TargetSpeakerCommandPipeline(models, PipelineConfig(
             primary_speaker_threshold=0.50,
             rescue_primary_threshold=0.65,
             rescue_secondary_threshold=0.65,

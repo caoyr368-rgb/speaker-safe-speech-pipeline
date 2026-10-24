@@ -10,7 +10,7 @@ from .text import infer_language, keyword_similarity
 from .types import AudioCandidate, ModelBundle, PipelineConfig, PipelineResult, Sample
 
 
-class SpeakerSafePipeline:
+class TargetSpeakerCommandPipeline:
     """Compose overlap detection, separation, ASR, and speaker verification.
 
     The class owns only routing and safety logic. Model loading, preprocessing,
@@ -23,7 +23,7 @@ class SpeakerSafePipeline:
 
     def run(self, sample: Sample) -> PipelineResult:
         self._validate_sample(sample)
-        with tempfile.TemporaryDirectory(prefix="speaker_safe_pipeline_") as temp:
+        with tempfile.TemporaryDirectory(prefix="target_speaker_command_") as temp:
             workdir = Path(temp)
             wake_overlap = self.models.overlap_detector.has_overlap(sample.wake_audio)
             wake_candidates = self._build_candidates(

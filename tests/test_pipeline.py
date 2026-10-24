@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from speaker_safe_pipeline import ModelBundle, PipelineConfig, Sample, SpeakerSafePipeline
+from target_speaker_command import ModelBundle, PipelineConfig, Sample, TargetSpeakerCommandPipeline
 
 
 class OverlapDetector:
@@ -72,7 +72,7 @@ class PipelineTests(unittest.TestCase):
         secondary: Verifier,
         enhancer: Enhancer | None = None,
         separator: Separator | None = None,
-    ) -> tuple[SpeakerSafePipeline, Enhancer, Separator]:
+    ) -> tuple[TargetSpeakerCommandPipeline, Enhancer, Separator]:
         enhancer = enhancer or Enhancer()
         separator = separator or Separator()
         models = ModelBundle(
@@ -84,7 +84,7 @@ class PipelineTests(unittest.TestCase):
             primary_speaker_verifier=primary,
             secondary_speaker_verifier=secondary,
         )
-        return SpeakerSafePipeline(models, PipelineConfig(
+        return TargetSpeakerCommandPipeline(models, PipelineConfig(
             primary_speaker_threshold=0.50,
             rescue_primary_threshold=0.65,
             rescue_secondary_threshold=0.65,

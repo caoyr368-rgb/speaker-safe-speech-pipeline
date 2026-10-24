@@ -1,4 +1,4 @@
-# Speaker-Safe Speech Pipeline
+# Open-Source Speech Model Pipeline for Target-Speaker Command Recognition
 
 [中文说明](README_zh.md)
 
@@ -65,12 +65,12 @@ The package itself has no runtime dependency beyond Python. Real adapters will a
 
 ## Use the API
 
-Implement the five small protocols in `speaker_safe_pipeline.types`, then compose them:
+Implement the five small protocols in `target_speaker_command.types`, then compose them:
 
 ```python
 from pathlib import Path
-from speaker_safe_pipeline import (
-    ModelBundle, PipelineConfig, Sample, SpeakerSafePipeline,
+from target_speaker_command import (
+    ModelBundle, PipelineConfig, Sample, TargetSpeakerCommandPipeline,
 )
 
 models = ModelBundle(
@@ -89,7 +89,7 @@ config = PipelineConfig(
     rescue_secondary_threshold=RESCUE_SECONDARY_THRESHOLD,
 )
 
-pipeline = SpeakerSafePipeline(models, config)
+pipeline = TargetSpeakerCommandPipeline(models, config)
 result = pipeline.run(Sample(
     sample_id="example-1",
     wake_audio=Path("wake.wav"),
