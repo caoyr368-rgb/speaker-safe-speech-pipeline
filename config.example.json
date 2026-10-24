@@ -1,0 +1,8 @@
+{
+  "primary_speaker_threshold": null,
+  "rescue_primary_threshold": null,
+  "rescue_secondary_threshold": null,
+  "require_strict_rescue_agreement": true,
+  "require_both_rescue_scores_to_improve": true
+}
+

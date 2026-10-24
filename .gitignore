@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+*secret*
+
+# Audio, datasets, models, checkpoints, and experiment artifacts
+data/
+dataset/
+datasets/
+models/
+model/
+checkpoints/
+weights/
+outputs/
+results/
+runs/
+cache/
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+*.tar
+*.tar.gz
+*.zip
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
